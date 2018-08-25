@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="http://cdn.rawgit.com/h2non/jsHashes/master/hashes.js"></script>
+        <script src ="./js/userAdmin.js"></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <!-- Add to homescreen for Chrome on Android -->
+        <meta name="mobile-web-app-capable" content="yes">
+
+        <!-- Add to homescreen for Safari on iOS -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+        <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .mdl-layout {
+              align-items: center;
+              justify-content: center;
+            }
+            .mdl-layout__content {
+                    padding: 24px;
+                    flex: none;
+            }
+        </style>
+    </head>
+    <body style="overflow-y: hidden">
+<div class="mdl-layout mdl-js-layout mdl-color--grey-100">
+	<main class="mdl-layout__content" style="height: 1000px;margin-top: 15%;">
+		<div class="mdl-card mdl-shadow--6dp">
+			<div class="mdl-card__title mdl-color--primary mdl-color-text--white">
+				<h2 class="mdl-card__title-text">Web4B Content Editor</h2>
+			</div>
+	  	<div id="login" class="mdl-card__supporting-text">
+				<form action="#">
+					<div class="mdl-textfield mdl-js-textfield">
+						<input class="mdl-textfield__input" type="text" id="user" />
+						<label class="mdl-textfield__label" for="user">Username</label>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield">
+						<input class="mdl-textfield__input" type="password" id="pwLog" />
+						<label class="mdl-textfield__label" for="pwLog">Password</label>
+					</div>
+				</form>
+			</div>
+			<div class="mdl-card__actions mdl-card--border">
+				<button onclick="login()" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Log in</button>
+			</div>
+		</div>
+	</main>
+</div>        
+    </body>
+</html>

@@ -1,0 +1,84 @@
+
+/* 
+    Author     : Michael Stabile
+    Source     : https://codepen.io/mikestabile/pen/zWZrVV?page=1
+*/
+
+
+
+.editor-toolbar {
+  background: #fff;
+  border: 1px solid #cecece; 
+  margin: 0;
+  padding: 0; 
+  
+  a {
+    display: inline-block;
+    padding: 8px 12px;
+    color: #000;
+    
+    &:hover {
+      background: #e4e4e4;
+    }
+  }
+  
+  .active {
+    background: #e4e4e4;
+  }
+  
+  .dropdown {
+    display: inline-block;
+    .btn-default {
+      border: none;
+      
+      &:focus, &:hover {
+        background: none;
+      }
+    }
+    
+    a {
+      margin: 0;
+    }
+  }
+  
+}
+
+#editor {
+  resize: vertical;
+	overflow: auto;
+	line-height: 1.5;
+  background: #fff;
+	border: 1px solid #cecece;
+  border-top: none;
+	min-height: 150px;
+	box-shadow: none;
+	padding: 8px 16px;
+	margin: 0 0 10px 0;  
+	font-size: 14px;	
+  
+  &:focus{
+   outline: none; 
+  }
+}
+
+.text_list_items{
+    color: white;
+}
+
+.keyword_container{
+    margin-top: 5px;
+    float: right;
+    width: 55%;
+}
+
+.search_result_container{
+    overflow-y: scroll;
+    max-height: 500px;
+    width: 100%;
+}
+
+unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+}
