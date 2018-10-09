@@ -50,13 +50,29 @@ def readPage():
 @pagesAPI.route("/page/update",  methods=['GET', 'POST'])
 def updatePage():
     datastring = json.loads(request.form.get("datastring"))
+    parags = datastring.get("paragraphs", [])
+    branch = datastring.get("branch", "other")
+    pName = datastring.get("pageName", None)
+    text = datastring.get("text")
+    cBoard = datastring.get("clipboard", [])
     pID = getPageID(datastring["pageName"])
-    print(datastring["cats"])
+    print(pID)
+    user = checkToken(request.form.get("token"))
     if pID != 0:
         datastring["cats"].extend(x for x in getPageCategories(pID) if x not in datastring["cats"])
-        print(datastring["cats"])
-    deleteEntry(pID, "page")
-    insertEntry(datastring, "page")
+    else:
+        createPage()
+        print("created")
+        return json.dumps([{"result": "OK"}])
+    cats = datastring.get("cats", ["other"])
+    toUpdate = {"$set": {"paragraphs": parags,
+                         "pageName": pName,
+                         "text": text,
+                         "clipboard": cBoard,
+                         "branch": branch,
+                         "cats": cats}}
+
+    updateEntry(data=toUpdate, database="pages", ID=pID, user=user["email"])
     return json.dumps([{"result": "OK"}])
 
 
