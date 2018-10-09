@@ -34,6 +34,19 @@
     display: none;
 }
 
+#unstagedUsers div.uUser{
+    border-bottom: 1px dotted black;
+    cursor: pointer;
+    margin-top: 3px;
+    text-align: center;    
+}
+
+.userPanel{
+    width: 33%;
+    height: 90%;
+    background-color: white;
+}
+
 .vers_cont{
     margin-top: 10px;
     height: 80%;

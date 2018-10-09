@@ -16,7 +16,6 @@ def after_request(response):
         token = request.args.get("token")
     newToken = updateToken(token)
     data = response.get_data(as_text=True)
-    d= []
     d = json.loads(data)
     d.append({"token": str(newToken)})
     response.set_data(json.dumps(d))
@@ -80,3 +79,9 @@ def updatePage():
 def deletePage():
     pid = getPageID(request.args.get("pageName"))
     deleteEntry(pid, "pages")
+
+
+@pagesAPI.route("/page/archive/get", methods=['GET', 'POST'])
+def getArchivedPages():
+    filter = request.args.get("filter", "{}")
+    return getChangedPages(filter)

@@ -50,7 +50,7 @@ def _checkOlderUnstagedPage(user, ID):
 
 def getChangedPages(filter):
     client = getPageClient()
-    result = client.find(filter)
+    result = client.find(json.loads(filter))
     toRet = []
     for res in result:
         res["_id"] = str(res["_id"])
@@ -65,3 +65,12 @@ def getChangedContent(filter):
         res["_id"] = str(res["_id"])
         toRet.append(res)
     return json.dumps(toRet, ensure_ascii=False)
+
+def getUnstaged():
+    toRet =[]
+    client = getContentClient()
+    res = client.find({})
+    for result in res:
+        result["_id"] = str(result["_id"])
+        toRet.append(result)
+    return toRet

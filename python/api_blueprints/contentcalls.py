@@ -71,3 +71,4 @@ def deleteContent():
     ID = request.args.get("id")
     deleteEntry(ID, "content")
     return json.dumps([{"result": "OK"}])
+

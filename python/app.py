@@ -57,6 +57,7 @@ def authenticate():
     if "/user/" not in str(request):
         token = request.form.get("token")
         if token == None: token = request.args.get("token")
+        print(token)
         error = authenticateOnExecute(route, token)
         if error is not None:
             return Response(error, status=401)

@@ -223,3 +223,40 @@ function addTabListener() {
         });
     }
 }
+
+
+var currentUnstaged = []
+
+function getUnstagedPages(){
+        $.ajax({url: "http://" + window.location.hostname + ":5000/page/archive/get",
+        data: {
+            token: getCookie("AuthToken"),
+            filter: "{}"
+        },
+        type: "GET",
+        success: function (data) {
+            data = updateToken(data);
+            data.forEach(x=>{currentUnstaged.push(x)})
+            displayUsers();
+            showSnackbar("Unstaged pages have been pulled")
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            window.location ="./index.html";
+            alert("New Page could not be saved. Either you don't have the necessary permissions or an error occurred");
+        }
+
+    });
+}
+
+function displayUsers(){
+    let seen = [];
+    currentUnstaged.forEach(x=>{
+        let author = x.user;
+        if(seen.includes(author)) return;
+        seen.push(author);
+    })
+    
+    seen.forEach(x=>{
+        $("#unstagedUsers").append("<div class='uUser'>"+ x+ "</div>")
+    })
+}

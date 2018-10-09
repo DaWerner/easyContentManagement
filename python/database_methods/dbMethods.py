@@ -3,7 +3,7 @@ import re
 from bson import ObjectId
 import random
 import json
-from database_methods.archiveMethods import createContentVersion, createPageVersion
+from database_methods.archiveMethods import createContentVersion, createPageVersion, getChangedPages, getChangedContent, getUnstaged
 from hashlib import sha256
 
 def getClient():
@@ -252,6 +252,8 @@ def getUserPermissions(role):
 def checkPermission(route, perms):
     if "admin" in route:
         return perms["admin"]
+    elif "archive" in route:
+        return perms["admin"]
     elif route == "/content/create":
         return "c" in perms["permissionContent"]
     elif route == "/content/read/keyword" or route=="/content/read/text":
@@ -307,3 +309,5 @@ def updateToken(token):
 def deleteToken(token):
     client = getClient()
     client.cmLoggesUsers.delete_one({"token": token})
+
+
