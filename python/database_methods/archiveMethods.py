@@ -19,6 +19,7 @@ def createContentVersion(new, document, user, type):
         client.insert_one(archDoc)
     else:
         client.update_one({"_id": older["_id"]}, {"$set": {"newDoc": new}})
+    print(getChangedContent({"user": user}))
 
 
 def _checkOlderUnstagedContent(user, ID):
@@ -39,9 +40,28 @@ def createPageVersion(new, document, user, type):
         client.insert_one(archDoc)
     else:
         client.update_one({"_id": older["_id"]}, {"$set": {"newDoc": new}})
-
+    print(getChangedPages({"user":user}))
 
 def _checkOlderUnstagedPage(user, ID):
     client = getPageClient()
     res = client.find_one({"origID": ID, "user": user})
     return res
+
+
+def getChangedPages(filter):
+    client = getPageClient()
+    result = client.find(filter)
+    toRet = []
+    for res in result:
+        res["_id"] = str(res["_id"])
+        toRet.append(res)
+    return json.dumps(toRet, ensure_ascii=False)
+
+def getChangedContent(filter):
+    client = getContentClient()
+    result = client.find(filter)
+    toRet = []
+    for res in result:
+        res["_id"] = str(res["_id"])
+        toRet.append(res)
+    return json.dumps(toRet, ensure_ascii=False)

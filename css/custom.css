@@ -371,6 +371,7 @@ input:focus +.ac_container{
   height: 17px;
 }
 
+
 /* Hide default HTML checkbox */
 .switch input {display:none;}
 

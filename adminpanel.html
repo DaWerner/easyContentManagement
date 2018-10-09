@@ -75,7 +75,7 @@
         <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
             <header class=" mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
                 <div class="mdl-layout__header-row">
-                <div class="demo-avatar-dropdown">
+                    <div class="demo-avatar-dropdown">
                         <img src="images/avatar.png" class="demo-avatar">
                         <span id="activeUser">hello@example.com</span>
                         <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
@@ -96,10 +96,10 @@
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" data-upgraded=",MaterialTextfield">
 
 
-            </div>
+                    </div>
 
                 </div>
-                
+
 
                 <div id="tabs" class="mdl-layout__tab-bar mdl-js-ripple-effect" >
                     <a id="tab-Users" class="custom_tab is-active">Users</a>
@@ -111,7 +111,7 @@
             </header>
             <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
                 <header class="demo-drawer-header">
-                                          <img src="images/logo.png" >
+                    <img src="images/logo.png" >
                 </header>                <nav id="navBar" class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
 
 
@@ -147,8 +147,26 @@
                 </section>
                 <section class="mdl-layout__tab-panel" id="Content">
                     <div class="page-content">
-                                Content
-
+                        <div class="mdl-grid  ">
+                            <div class=" mdl-shadow--2dp mdl-cell mdl-cell--8-col mdl-grid main_content_card">
+                            </div>
+                            <div class=" mdl-shadow--2dp mdl-cell mdl-cell--8-col mdl-grid diffCard">
+                                  <div class="mdl-card__title mdl-card--expand">
+                                    <h2 class="mdl-card__title-text">Original</h2>
+                                  </div>
+                                <div id="origContainer" class="vers_cont">
+                                    
+                                </div>
+                            </div>
+                            <div class=" mdl-shadow--2dp mdl-cell mdl-cell--8-col mdl-grid diffCard">
+                                  <div class="mdl-card__title mdl-card--expand">
+                                    <h2 class="mdl-card__title-text">Changed by: </h2>
+                                  </div>
+                                <div id="diffContainer" class="vers_cont">
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <section class="mdl-layout__tab-panel" id="Roles">
@@ -169,7 +187,7 @@
                                 </tr>
                             </thead>
                             <tbody id="roleTable">
-                                
+
                             </tbody>
                         </table>
 
@@ -198,61 +216,61 @@
                     </div>
                     <div class="modal-body" id="modalContent">
                         <div id="roleForm" class="modal_form" style="overflow-x:  hidden;">
-                                    <div id="newRole">
-                                        <div>
-                                            <span>Role </span>
-                                            <input  id="roleInput" type="text">
-                                        </div>
-                                        <div class="row" style="margin-left: 0px;">
-                                            <span >Permission for Pages </span>
-                                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="CreateP">
-                                                  <input type="checkbox" id="CreateP" class="mdl-checkbox__input" >
-                                                  <span class="mdl-checkbox__label">Create</span>
-                                                </label>
-                                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="ReadP">
-                                                  <input type="checkbox" id="ReadP" class="mdl-checkbox__input">
-                                                  <span class="mdl-checkbox__label">Read</span>
-                                                </label>
-                                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="UpdateP">
-                                                  <input type="checkbox" id="UpdateP" class="mdl-checkbox__input" >
-                                                  <span class="mdl-checkbox__label">Update</span>
-                                                </label>
-                                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="DeleteP">
-                                                  <input type="checkbox" id="DeleteP" class="mdl-checkbox__input">
-                                                  <span class="mdl-checkbox__label">Delete</span>
-                                                </label>
-                                                                          
-                                        </div>
-                                        <div class="row" style="margin-left: 0px;">
-                                            <span >Permission for Content </span>
-                                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="CreateC">
-                                                  <input type="checkbox" id="CreateC" class="mdl-checkbox__input" >
-                                                  <span class="mdl-checkbox__label">Create</span>
-                                                </label>
-                                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="ReadC">
-                                                  <input type="checkbox" id="ReadC" class="mdl-checkbox__input">
-                                                  <span class="mdl-checkbox__label">Read</span>
-                                                </label>
-                                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="UpdateC">
-                                                  <input type="checkbox" id="UpdateC" class="mdl-checkbox__input" >
-                                                  <span class="mdl-checkbox__label">Update</span>
-                                                </label>
-                                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="DeleteC">
-                                                  <input type="checkbox" id="DeleteC" class="mdl-checkbox__input">
-                                                  <span class="mdl-checkbox__label">Delete</span>
-                                                </label>
-                                        </div>
-                                        <div>
-                                        <div class="row" style="margin-left: 0px;">
-                                                <span class="mdl-checkbox__label">Admin </span>
-                                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Admin">
-                                                  <input type="checkbox" id="Admin" class="mdl-checkbox__input">
+                            <div id="newRole">
+                                <div>
+                                    <span>Role </span>
+                                    <input  id="roleInput" type="text">
+                                </div>
+                                <div class="row" style="margin-left: 0px;">
+                                    <span >Permission for Pages </span>
+                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="CreateP">
+                                        <input type="checkbox" id="CreateP" class="mdl-checkbox__input" >
+                                        <span class="mdl-checkbox__label">Create</span>
+                                    </label>
+                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="ReadP">
+                                        <input type="checkbox" id="ReadP" class="mdl-checkbox__input">
+                                        <span class="mdl-checkbox__label">Read</span>
+                                    </label>
+                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="UpdateP">
+                                        <input type="checkbox" id="UpdateP" class="mdl-checkbox__input" >
+                                        <span class="mdl-checkbox__label">Update</span>
+                                    </label>
+                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="DeleteP">
+                                        <input type="checkbox" id="DeleteP" class="mdl-checkbox__input">
+                                        <span class="mdl-checkbox__label">Delete</span>
+                                    </label>
 
-                                                </label>
-                                        </div>
-                                        </div>
-                                        </div>
-                    </div>
+                                </div>
+                                <div class="row" style="margin-left: 0px;">
+                                    <span >Permission for Content </span>
+                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="CreateC">
+                                        <input type="checkbox" id="CreateC" class="mdl-checkbox__input" >
+                                        <span class="mdl-checkbox__label">Create</span>
+                                    </label>
+                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="ReadC">
+                                        <input type="checkbox" id="ReadC" class="mdl-checkbox__input">
+                                        <span class="mdl-checkbox__label">Read</span>
+                                    </label>
+                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="UpdateC">
+                                        <input type="checkbox" id="UpdateC" class="mdl-checkbox__input" >
+                                        <span class="mdl-checkbox__label">Update</span>
+                                    </label>
+                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="DeleteC">
+                                        <input type="checkbox" id="DeleteC" class="mdl-checkbox__input">
+                                        <span class="mdl-checkbox__label">Delete</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <div class="row" style="margin-left: 0px;">
+                                        <span class="mdl-checkbox__label">Admin </span>
+                                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="Admin">
+                                            <input type="checkbox" id="Admin" class="mdl-checkbox__input">
+
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer" id="modalFooter">
                         <button type="button" class="mdl-button" data-dismiss="modal">Cancel</button>
@@ -274,31 +292,31 @@
                     </div>
                     <div class="modal-body" id="usermodalcontent">
                         <div id="userform" class="modal_form">
-                                    <div id="register">
-                                        <div>
-                                            <span>Name </span>
-                                            <input  id="name" type="text">
-                                        </div>
-                                        <div>
-                                            <span >Password </span>
-                                            <input id="pwReg" type="text">
-                                        </div>
-                                        <div>
-                                            <span>Email </span>
-                                            <input  id="mail" type="text">
-                                        </div>
-                                        <div>
-                                            <span >Role </span>
-                                            <select id="role">
-                                                <option value="Test Role"> Test Role</option>
-                                            </select>
-                                        </div>
-                                       <div>
-                                           <button id="registerBtn" class="mdl-button" onclick="register()">
-                                                Register new Account
-                                            </button>
-                                        </div>
-                                        </div>
+                            <div id="register">
+                                <div>
+                                    <span>Name </span>
+                                    <input  id="name" type="text">
+                                </div>
+                                <div>
+                                    <span >Password </span>
+                                    <input id="pwReg" type="text">
+                                </div>
+                                <div>
+                                    <span>Email </span>
+                                    <input  id="mail" type="text">
+                                </div>
+                                <div>
+                                    <span >Role </span>
+                                    <select id="role">
+                                        <option value="Test Role"> Test Role</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <button id="registerBtn" class="mdl-button" onclick="register()">
+                                        Register new Account
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer" id="modalFooter">
