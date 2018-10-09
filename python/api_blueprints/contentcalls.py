@@ -60,9 +60,10 @@ def updateContent():
     cats = request.form.get("cats").split(",")
     kws = request.form.get("kw").split(",")
     text = request.form.get("text")
+    token = checkToken(request.form.get("token")).get("email")
     ID = request.form.get("id")
     toUpdate = {"$set": {"text": text, "keywords": kws, "categories": cats}}
-    return json.dumps([{"result":"OK"}]) if updateEntry(toUpdate, "content", ID) else Response(json.dumps([{"result":"not OK"}]), status=406)
+    return json.dumps([{"result":"OK"}]) if updateEntry(toUpdate, "content", ID, token) else Response(json.dumps([{"result":"not OK"}]), status=406)
 
 
 @contentAPI.route("/content/delete",  methods=['GET', 'POST'])

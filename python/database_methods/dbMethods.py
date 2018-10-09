@@ -3,6 +3,7 @@ import re
 from bson import ObjectId
 import random
 import json
+from database_methods.archiveMethods import createContentVersion
 from hashlib import sha256
 
 def getClient():
@@ -219,13 +220,15 @@ def updateUserPW(user, newPW):
     client.close()
 
 
-def updateEntry(data, database, ID):
+def updateEntry(data, database, ID, user):
     client = getClient()
     db = None
     if database == "content":
         db = client.contentManager.content
+        #createContentVersion(data, db.find_one({"_id": ObjectId(str(ID))}), user, "change")
     else:
         db = client.contentManager.pages
+        #add page version creation
     res = db.update_one({"_id": ObjectId(str(ID))}, data, upsert=False)
     client.close()
     return res.modified_count > 0
